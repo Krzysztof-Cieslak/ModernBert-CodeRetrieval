@@ -1,0 +1,36 @@
+[project]
+name = "modernbert-playground"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "accelerate>=1.2.1",
+    "datasets>=3.2.0",
+    "sentence-transformers==3.3.0",
+    "torch>=2.5.1",
+    "torchvision>=0.20.1",
+    "transformers>=4.47.1",
+    "pylate",
+]
+
+[tool.uv.sources]
+transformers = { git = "https://github.com/huggingface/transformers.git" }
+pylate = { git = "https://github.com/Krzysztof-Cieslak/pylate.git", branch = "transformers-1.48.dev" }
+torch = [
+  { index = "pytorch-cu124", marker = "platform_system != 'Darwin'"},
+]
+torchvision = [
+  { index = "pytorch-cu124", marker = "platform_system != 'Darwin'"},
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "ipywidgets>=8.1.5",
+]

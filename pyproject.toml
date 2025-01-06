@@ -12,6 +12,10 @@ dependencies = [
     "torchvision>=0.20.1",
     "transformers>=4.47.1",
     "pylate",
+    "tree-sitter>=0.23.2",
+    "tree-sitter-typescript>=0.23.2",
+    "gitpython>=3.1.44",
+    "tree-sitter-rust>=0.23.2",
 ]
 
 [tool.uv.sources]
